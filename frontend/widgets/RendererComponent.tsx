@@ -1,5 +1,6 @@
 import React from "react";
 import {ServerItemRenderer} from "../package/perseus/src/server-item-renderer";
+import {ServerItemRendererWithDebugUI} from "../package/perseus/testing/server-item-renderer-with-debug-ui";
 import type { PerseusItem } from "@khanacademy/perseus-core";
 import {type PerseusDependenciesV2  } from "@khanacademy/perseus";
 import { storybookDependenciesV2 } from "../package/perseus/testing/test-dependencies";
@@ -97,6 +98,7 @@ const RendererComponent = () => {
                     showSolutions="none"
                     hintsVisible={0}
                     reviewMode={false}
+                    // startAnswerless
                 />
             </div>
 
