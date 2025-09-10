@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@khanacademy/math-input": "^26.2.4",
     "@khanacademy/perseus": "68.0.2",
     "@tailwindcss/vite": "^4.1.13",
+    "raphael": "^2.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
