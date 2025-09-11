@@ -1,32 +1,6 @@
-import BaseRadio from '../package/perseus/src/widgets/radio/base-radio'; // assuming I've placed BaseRadio in my project
+import BaseRadio from '../../package/perseus/src/widgets/radio/base-radio'; // assuming I've placed BaseRadio in my project
 import React, { useState } from "react";
-
-
-// mock-i18n-context.tsx
-const I18nContext = React.createContext({
-    strings: {
-        chooseNumAnswers: ({numCorrect}: {numCorrect: string}) => 
-            `Choose ${numCorrect} answers`,
-        chooseAllAnswers: "Choose all that apply",
-        chooseOneAnswer: "Choose one answer",
-    },
-});
-
-// mock-style-constants.ts
-// const constants = {
-//     gray17: '#777',
-//     radioBorderColor: '#ccc',
-//     negativePhoneMargin: '-10px',
-//     phoneMargin: '10px',
-// };
-
-// mock-media-queries.ts
-// const mediaQueries = {
-//     smOrSmaller: '@media (max-width: 768px)',
-//     xl: '@media (min-width: 1280px)',
-// };
-
-const usePerseusI18n = () => React.useContext(I18nContext);
+import { PerseusI18nProvider, usePerseusI18n } from "../context/perseusI18nContext";
 
 const RadioWidget = () => {
     const [selectedIds, setSelectedIds] = useState<string[]>([]);
@@ -87,19 +61,19 @@ const RadioWidget = () => {
         canScrollPage: true,
     };
 
-    const handleChange = (checkedChoiceIds: string[]) => {
-        setSelectedIds(checkedChoiceIds);
+    const handleChange = (checkedChoiceIds: readonly string[]) => {
+        setSelectedIds([...checkedChoiceIds]);
     };
 
     return (
-        <I18nContext.Provider value={{
-            strings: {
+        <PerseusI18nProvider
+            strings={{
                 chooseNumAnswers: ({numCorrect}) => 
                     `Select ${numCorrect} correct answer${numCorrect !== "1" ? "s" : ""}`,
                 chooseAllAnswers: "Select all correct answers",
                 chooseOneAnswer: "Select one answer",
-            }
-        }}>
+            }}
+        >
             <div>
                 <h1>Country Capital Quiz</h1>
                 <p>What is the capital of France?</p>
@@ -128,7 +102,7 @@ const RadioWidget = () => {
                     Selected: {selectedIds.join(', ')}
                 </div>
             </div>
-        </I18nContext.Provider>
+        </PerseusI18nProvider>
     );
 };
 

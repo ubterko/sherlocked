@@ -128,7 +128,7 @@ export class NumericInput
         return (
             <NumericInputComponent
                 {...this.props}
-                answerForms={normalizeCorrectAnswerForms(this.props.answers)}
+                answerForms={normalizeCorrectAnswerForms(this.props.answers)} 
                 ref={this.inputRef}
             />
         );
