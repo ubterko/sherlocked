@@ -1,14 +1,7 @@
 from fastapi import FastAPI 
-from . import app as sherlockED_app
+from .app import routes as app_routes
 import uvicorn 
 
 app = FastAPI()
-
-app.include_route(sherlockED_app.routes, prefix="/api")
-
-if __name__ == "__main__":
-    uvicorn.run(
-        app, 
-        host="0.0.0.0", 
-        port=8000
-    )
+ 
+app.include_router(app_routes.router, prefix="/api", tags=["api"])

@@ -26,3 +26,4 @@ script.ts
 *.njsproj
 *.sln
 *.sw?
+*__pycache__
