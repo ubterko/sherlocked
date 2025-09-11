@@ -1,5 +1,6 @@
 sherlockED_brief*
-
+backend/env/
+*questions.json
 # Logs
 logs
 *.log

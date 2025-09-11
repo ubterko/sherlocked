@@ -1,0 +1,252 @@
+{
+    "questions": [
+        {
+            "question": {
+                "content": "**Match each claim with its supporting evidence.**\n\n[[☃ matcher 1]]",
+                "images": {
+                    
+                },
+                "widgets": {
+                    "matcher 1": {
+                        "version": {
+                            "major": 0,
+                            "minor": 0
+                        },
+                        "type": "matcher",
+                        "graded": true,
+                        "options": {
+                            "labels": [
+                                "**Claims**",
+                                "**Evidence**"
+                            ],
+                            "padding": true,
+                            "orderMatters": false,
+                            "right": [
+                                "Medium-sized stars typically exist for roughly 10 billion years",
+                                "The current trajectory of the Earth’s tectonic plate movement",
+                                "The life cycle of medium-sized stars includes a red giant stage and ends in a whimper as a white dwarf",
+                                "Rapid escalation of greenhouse gas emissions",
+                                "The current trajectory of the Milky Way galaxy and those in its immediate proximity"
+                            ],
+                            "left": [
+                                "Our Sun will run out of fuel and die in around 5 billion years ",
+                                "Plate tectonics will rearrange the continents: the Pacific will narrow, bringing Australia closer to the Americas, and the Atlantic will expand to form the largest of the oceans ",
+                                "Our Sun will run out of hydrogen, swell into a red giant, gobble up the inner rocky planets, and then collapse and die ",
+                                "Average global temperatures will rise ",
+                                "In 3 to 4 billion years, our galaxy will begin a slow collision with its closest large neighbor, Andromeda "
+                            ]
+                        }
+                    }
+                }
+            },
+            "answerArea": {
+                "calculator": false,
+                "periodicTable": false,
+                "financialCalculatorMonthlyPayment": false,
+                "financialCalculatorTotalAmount": false,
+                "financialCalculatorTimeToPayOff": false,
+                "periodicTableWithKey": false
+            },
+            "hints": [
+                
+            ]
+        },
+        {
+            "question": {
+                "content": "**Select all input values for which $g(x)=2$.**\n\n[[☃ radio 1]]\n\n ![](web+graphie://ka-perseus-graphie.s3.amazonaws.com/4613e0d9c906b3053fb5523eed83d4f779fdf6bb)",
+                "images": {
+                    
+                },
+                "widgets": {
+                    "radio 1": {
+                        "graded": true,
+                        "version": {
+                            "major": 2,
+                            "minor": 0
+                        },
+                        "static": false,
+                        "type": "radio",
+                        "alignment": "default",
+                        "options": {
+                            "choices": [
+                                {
+                                    "id": "radio-choice-test-id-0",
+                                    "content": "$x=-6$"
+                                },
+                                {
+                                    "id": "radio-choice-test-id-1",
+                                    "content": "$x=4$"
+                                },
+                                {
+                                    "id": "radio-choice-test-id-2",
+                                    "content": "$x=7$",
+                                    "isNoneOfTheAbove": false
+                                },
+                                {
+                                    "id": "radio-choice-test-id-3",
+                                    "content": "There is no such input value.",
+                                    "isNoneOfTheAbove": true
+                                }
+                            ],
+                            "randomize": false,
+                            "hasNoneOfTheAbove": true,
+                            "multipleSelect": true,
+                            "countChoices": false,
+                            "deselectEnabled": false
+                        }
+                    }
+                }
+            },
+            "answerArea": {
+                "calculator": false,
+                "periodicTable": false,
+                "financialCalculatorMonthlyPayment": false,
+                "financialCalculatorTotalAmount": false,
+                "financialCalculatorTimeToPayOff": false,
+                "periodicTableWithKey": false
+            },
+            "hints": [
+                
+            ]
+        },
+        {
+            "question": {
+                "content": "$5008 \\div 4 =$ [[☃ numeric-input 1]] ",
+                "images": {
+                    
+                },
+                "widgets": {
+                    "numeric-input 1": {
+                        "graded": true,
+                        "static": false,
+                        "type": "numeric-input",
+                        "options": {
+                            "size": "normal",
+                            "coefficient": false,
+                            "labelText": "",
+                            "rightAlign": false,
+                            "static": false,
+                            "userInput": {
+                                "currentValue": ""
+                            },
+                            "answers": [
+                                {
+                                    "answerForms": [
+                                        "integer",
+                                        "mixed",
+                                        "improper",
+                                        "proper",
+                                        "decimal",
+                                        "pi"
+                                    ],
+                                    "simplify": "required",
+                                    "status": "correct"
+                                }
+                            ]
+                        },
+                        "alignment": "default",
+                        "version": {
+                            "major": 0,
+                            "minor": 0
+                        }
+                    }
+                }
+            },
+            "answerArea": {
+                "calculator": false,
+                "periodicTable": false,
+                "financialCalculatorMonthlyPayment": false,
+                "financialCalculatorTotalAmount": false,
+                "financialCalculatorTimeToPayOff": false,
+                "periodicTableWithKey": false
+            },
+            "hints": [
+                
+            ]
+        },
+        {
+            "question": {
+                "content": "The total number of boxes the forklift can carry is [[☃ dropdown 1]] $60$.",
+                "images": {
+                    
+                },
+                "widgets": {
+                    "dropdown 1": {
+                        "type": "dropdown",
+                        "alignment": "default",
+                        "static": false,
+                        "graded": true,
+                        "options": {
+                            "choices": [
+                                {
+                                    "content": "greater than or equal to"
+                                },
+                                {
+                                    "content": "less than or equal to"
+                                }
+                            ],
+                            "placeholder": "greater/less than or equal to",
+                            "static": false
+                        },
+                        "version": {
+                            "major": 0,
+                            "minor": 0
+                        }
+                    }
+                }
+            },
+            "answerArea": {
+                "calculator": false,
+                "periodicTable": false,
+                "financialCalculatorMonthlyPayment": false,
+                "financialCalculatorTotalAmount": false,
+                "financialCalculatorTimeToPayOff": false,
+                "periodicTableWithKey": false
+            },
+            "hints": [
+                
+            ]
+        },
+        {
+            "question": {
+                "content": "[[☃ image 1]]",
+                "images": {
+                    
+                },
+                "widgets": {
+                    "image 1": {
+                        "type": "image",
+                        "graded": true,
+                        "version": {
+                            "major": 0,
+                            "minor": 0
+                        },
+                        "static": false,
+                        "alignment": "default",
+                        "options": {
+                            "backgroundImage": {
+                                "url": "https://cdn.kastatic.org/ka-content-images/61831c1329dbc32036d7dd0d03e06e7e2c622718.jpg",
+                                "width": 400,
+                                "height": 225
+                            },
+                            "alt": "",
+                            "caption": "",
+                            "title": ""
+                        }
+                    }
+                }
+            },
+            "answerArea": {
+                "calculator": false,
+                "periodicTable": false,
+                "financialCalculatorMonthlyPayment": false,
+                "financialCalculatorTotalAmount": false,
+                "financialCalculatorTimeToPayOff": false,
+                "periodicTableWithKey": false
+            },
+            "hints": [
+                
+            ]
+        }
+    ]
+}
