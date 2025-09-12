@@ -106,7 +106,6 @@ export class ServerItemRenderer
     static contextType = PerseusI18nContext;
     declare context: React.ContextType<typeof PerseusI18nContext>;
 
-    // @ts-expect-error - TS2564 - Property 'questionRenderer' has no initializer and is not definitely assigned in the constructor.
     questionRenderer: Renderer;
     hintsRenderer: any;
     _currentFocus: FocusPath;
@@ -516,9 +515,11 @@ export default React.forwardRef<
 >(function ServerItemRendererWithRef(props, ref) {
     return (
         <LoadingContext.Consumer>
-            {({onRendered}) => (
+                    {({onRendered}) => (
                 <ServerItemRenderer
                     {...props}
+                    item={props.item}
+                    dependencies={props.dependencies}
                     onRendered={onRendered}
                     ref={ref}
                 />

@@ -39,7 +39,7 @@ export const testDependencies: PerseusDependencies = {
 
     TeX: ({children}: {children: React.ReactNode}) => {
         return <span className="mock-TeX">{children}</span>;
-    },
+    }, 
 
     // @ts-expect-error - TS2322 - Type '(str?: string | null | undefined) => string' is not assignable to type 'StaticUrlFn'.
     staticUrl: (str?: string | null) => {
@@ -128,6 +128,7 @@ export const storybookDependenciesV2: PerseusDependenciesV2 = {
             console.info("⚡️ Sending analytics event:", event);
         },
     },
+    staticUrl: (str?: string | null) => (str ? str : ""),
 };
 
 export const cypressTestDependencies: PerseusDependencies = {

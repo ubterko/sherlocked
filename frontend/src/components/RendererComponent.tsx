@@ -22,7 +22,8 @@ const RendererComponent = () => {
             });
     }, []);
 
-    const item = perseusItems[0];
+    const [item, setItem] = useState(0);
+    const perseusItem = perseusItems[item];
 
     return (
         <PerseusI18nProvider
@@ -39,7 +40,7 @@ const RendererComponent = () => {
                 {item && (
                     <ServerItemRenderer
                         problemNum={0}
-                        item={item}
+                        item={perseusItem}
                         dependencies={storybookDependenciesV2}
                         apiOptions={{}}
                         linterContext={{
@@ -53,6 +54,17 @@ const RendererComponent = () => {
                         reviewMode={false}
                     />
                 )}
+                
+                <button 
+                    onClick={() => {
+                        const index = (item === perseusItems.length - 1) ? 0 : (item + 1);
+                        console.log(`Item: ${index}`)
+                        setItem(index)}
+                    }
+                    className="absolute bg-black rounded text-white p-2 bottom-8 
+                    right-40">
+                        Next
+                </button>
             </div>
         </PerseusI18nProvider>
     );

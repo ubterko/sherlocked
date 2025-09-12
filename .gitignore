@@ -27,3 +27,4 @@ script.ts
 *.sln
 *.sw?
 *__pycache__
+*env
