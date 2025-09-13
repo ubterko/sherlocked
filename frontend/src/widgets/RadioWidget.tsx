@@ -1,6 +1,6 @@
 import BaseRadio from '../../package/perseus/src/widgets/radio/base-radio'; // assuming I've placed BaseRadio in my project
 import React, { useState } from "react";
-import { PerseusI18nProvider, usePerseusI18n } from "../context/perseusI18nContext";
+import { PerseusI18nProvider, usePerseusI18n } from "../contexts/perseusI18nContext";
 
 const RadioWidget = () => {
     const [selectedIds, setSelectedIds] = useState<string[]>([]);

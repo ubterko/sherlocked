@@ -76,7 +76,7 @@ export class Matcher extends React.Component<Props, State> implements Widget {
 
     onMeasureRight: (arg1: any) => void = (dimensions) => {
         const height = _.max(dimensions.heights);
-        this.setState({rightHeight: height});
+        this.setState({rightHeight: height}); 
     };
 
     _getUserInputFromSortable: () => PerseusMatcherUserInput = () => {

@@ -46,7 +46,7 @@ export const testDependencies: PerseusDependencies = {
         // We define the interface such that TypeScript can infer calls properly.
         // However, it means that return types are hard to match here in
         // the implementation.
-        return `${str}`;
+        return `mockStaticUrl(${str})`;
     },
 
     // video widget

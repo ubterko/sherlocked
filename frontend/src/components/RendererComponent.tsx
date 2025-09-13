@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { ServerItemRenderer } from "../../package/perseus/src/server-item-renderer";
 import { storybookDependenciesV2 } from "../../package/perseus/testing/test-dependencies";
 import type { PerseusItem } from "@khanacademy/perseus-core";
-import { PerseusI18nProvider } from "../context/perseusI18nContext";
+import { PerseusI18nProvider } from "../contexts/perseusI18nContext";
+// import { ExamContext } from "../contexts/ExamContext";
 
 const RendererComponent = () => {
     const [perseusItems, setPerseusItems] = useState<PerseusItem[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [item, setItem] = useState(0);
+    const [loading, setLoading] = useState(true); 
+    // const { dispatch } = React.useContext(ExamContext);
 
     useEffect(() => {
         fetch("http://localhost:8000/api/questions")
@@ -22,7 +25,11 @@ const RendererComponent = () => {
             });
     }, []);
 
-    const [item, setItem] = useState(0);
+    // further work on grading system 
+    // const handleAnswer = (answer) => {
+    //     dispatch({ type: 'RECORD_ANSWER', payload: { questionId, answer } });
+    // };
+
     const perseusItem = perseusItems[item];
 
     return (
@@ -36,8 +43,7 @@ const RendererComponent = () => {
         >
             <div style={{ padding: "20px" }}>
                 {loading && <p>Loading questions...</p>}
-                {!loading && !item && <p>No question found</p>}
-                {item && (
+                {!loading && perseusItems.length >= 1 &&
                     <ServerItemRenderer
                         problemNum={0}
                         item={perseusItem}
@@ -52,8 +58,7 @@ const RendererComponent = () => {
                         showSolutions="none"
                         hintsVisible={0}
                         reviewMode={false}
-                    />
-                )}
+                    />}
                 
                 <button 
                     onClick={() => {

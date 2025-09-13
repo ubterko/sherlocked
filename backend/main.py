@@ -5,12 +5,17 @@ import uvicorn
 
 app = FastAPI()
 
+origins = [
+        "http://localhost",
+        "http://localhost:5174",  # React dev server
+    ]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # or ["*"] for dev
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],)
+    allow_headers=["*"],
+)
 
 
 
