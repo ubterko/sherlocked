@@ -42,7 +42,7 @@ Ensure you have the following installed:
     Install the necessary npm packages for the frontend.
 
     ```bash
-    npm install
+    npm install --force
     ```
 
 3.  **Run the Frontend Development Server:**
