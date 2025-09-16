@@ -16,13 +16,14 @@ export type ExamContextType = {
 };
 
 export type UserAnswer = {
-    questionId: string 
-    // isCorrect: boolean
+    questionId: string
+    answer: any
+    isCorrect?: boolean
 }
 
 export type Exam = {
-    examData: ExamData
-    userAnswers: Array<UserAnswer>
-    score: number 
+    examData: ExamData | null
+    userAnswers: Record<string, any>
+    score: number | null
     isGraded: boolean
 }

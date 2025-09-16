@@ -3,7 +3,7 @@ import  type { Exam, UserAnswer, ExamContextType, ExamAction } from './types';
 
 const initialState = {
     examData: null,
-    userAnswers: {questionId: "", isCorrect: false},
+    userAnswers: {},
     score: null,
     isGraded: false,
 }
