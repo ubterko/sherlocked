@@ -1,39 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react';
 import './App.css'
-import RadioWidget from '../widgets/RadioWidget';
+import RendererComponent from './components/RendererComponent';
+import RadioWidget from './widgets/RadioWidget';
+import AdminPanel from './components/AdminPanel';
+import { BrowserRouter as Router, Route,  Switch } from 'react-router-dom';
+import { ExamProvider } from './contexts/ExamContext';
 
-const mockItem = {
-  question: {
-    content: "What is the capital of France?",
-    widgets: {},
-    images: {}
-  },
-  answerArea: {
-    calculator: false,
-    financialCalculatorMonthlyPayment: false,
-    financialCalculatorTimeToPayOff: false,
-    financialCalculatorTotalAmount: false,
-    periodicTable: false,
-    periodicTableWithKey: false
-  }
-};
+function AppUI() {
+  const [testStarted, setTestStarted] = useState(false);
 
-const mockDependencies = {
-  analytics: {
-    onAnalyticsEvent: () => {}
-  },
-  useVideo: () => ({ result: { video: null } })
+  return (
+    <div className='bg-green-200 w-[100vw] h-[100vh] flex flex-col justify-start
+      items-center'>
+      <h1 className="text-center text-4xl font-bold p-4 m-4">
+        SherlockED Exam System
+      </h1>
+
+      <div className='m-8 p-4 border bg-white border-[#ccc] rounded w-3/4 h-[400px]
+        overflow-auto'>
+        {
+          testStarted === false ? (
+            <div className="text-black flex flex-col items-center">
+              <h1 className='mt-[70px]'>This is a mock-test for simulating the SherlockED Exam system.</h1>
+              <button
+                className='bg-blue-500 text-white px-4 py-2 rounded mt-4'
+                onClick={() => setTestStarted(true)}>
+                  Start Test
+              </button>
+            </div>
+          ) : (
+            <RendererComponent />
+          )
+        }
+      </div>
+    </div>
+  )
 };
 
 function App() {
   return (
-    <div>
-      <h1>Welcome to Sherlocked!</h1>
-      <RadioWidget item={mockItem} dependencies={mockDependencies} />
-    </div>
+    <ExamProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={AppUI} />
+          <Route path="/radio-widget" component={RadioWidget} />
+          <Route path="/admin" component={AdminPanel} />
+        </Switch>
+      </Router>
+    </ExamProvider>
   )
 }
 
-export default App
+export default App;
