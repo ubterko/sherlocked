@@ -84,10 +84,10 @@ const RendererComponent = () => {
                         reviewMode={false}
                     />}
                 
-                <button
+{/*                 <button
                     onClick={handleSubmit}
                     className="absolute bg-blue-500 rounded text-white p-2 bottom-8 right-40">
-                </button>
+                </button> */}
                 <button
                     onClick={() => {
                         const index = (item === perseusItems.length - 1) ? 0 : (item + 1);
