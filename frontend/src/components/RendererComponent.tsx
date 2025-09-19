@@ -7,19 +7,18 @@ import { storybookDependenciesV2 } from "../../package/perseus/testing/test-depe
 import { useEffect, useState } from "react";
 import { PerseusI18nProvider } from "../context/perseusI18nContext";
 
-const [perseusItems, setPerseusItems] = useState<PerseusItem[]>([]);
-// const [perseusItem, setPerseusItem] = useState<PerseusItem | null>(null);
-
-useEffect(() => {
-  fetch("http://localhost:8000/api/questions")
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-        setPerseusItems(data); // Assuming the API returns an array of questions});
-    }
-)}, []);
-
 const RendererComponent = () => {
+    const [perseusItems, setPerseusItems] = useState<PerseusItem[]>([]);
+
+    useEffect(() => {
+    fetch("http://localhost:8000/api/questions")
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            setPerseusItems(data); // Assuming the API returns an array of questions});
+        }
+    )}, []);
+
     return (
         <PerseusI18nProvider
             strings={{
@@ -31,21 +30,25 @@ const RendererComponent = () => {
         >
 
             <div style={{ padding: "20px" }}>
-                <ServerItemRenderer
-                    problemNum={0}
-                    item={perseusItems[0]}
-                    dependencies={storybookDependenciesV2}
-                    apiOptions={{}}
-                    linterContext={{
-                        contentType: "",
-                        highlightLint: true,
-                        paths: [],
-                        stack: [],
-                    }}
-                    showSolutions="none"
-                    hintsVisible={0}
-                    reviewMode={false}
-                />
+                 {perseusItems.length > 0 ? (
+                    <ServerItemRenderer
+                        problemNum={0}
+                        item={perseusItems[1]}
+                        dependencies={storybookDependenciesV2}
+                        apiOptions={{}}
+                        linterContext={{
+                            contentType: "",
+                            highlightLint: true,
+                            paths: [],
+                            stack: [],
+                        }}
+                        showSolutions="none"
+                        hintsVisible={0}
+                        reviewMode={false}
+                        />
+                    ) : (
+                        <p>Loading...</p>
+                    )}
             </div>
 
         </PerseusI18nProvider>

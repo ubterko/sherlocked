@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './App.css'
-import RendererComponent from './components/RendererComponent';
-import RadioWidget from './widgets/RadioWidget';
-import { Routes, Route } from 'react-router-dom'; 
+import RendererComponent from './components/RendererComponent'; 
 
 function AppUI() {
   const [testStarted, setTestStarted] = useState(false);
@@ -35,10 +33,9 @@ function AppUI() {
 function App() {
   return (
 
-      <Routes>
-        <Route path="/" element={<AppUI />} />
-        <Route path="/radio-widget" element={<RadioWidget />} />
-      </Routes>
+      <div>
+        <AppUI />
+      </div>
 
   )
 }
